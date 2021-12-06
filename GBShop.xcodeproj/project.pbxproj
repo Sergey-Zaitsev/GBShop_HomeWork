@@ -67,6 +67,9 @@
 		123E6A14275E6A8A00C713E2 /* ResponseCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodable.swift; sourceTree = "<group>"; };
 		123E6A16275E6AA800C713E2 /* AbstractRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequestFactory.swift; sourceTree = "<group>"; };
 		123E6A18275E6ABF00C713E2 /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
+		123E6A1B275E8D4E00C713E2 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
+		123E6A1C275E8D9500C713E2 /* Ui.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Ui.xctestplan; sourceTree = "<group>"; };
+		123E6A1D275E8E1C00C713E2 /* Full.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Full.xctestplan; sourceTree = "<group>"; };
 		12888CD827556438004A9FF5 /* GBShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12888CDB27556438004A9FF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12888CDD27556438004A9FF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +135,16 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		123E6A1A275E8D0000C713E2 /* TestPlanes */ = {
+			isa = PBXGroup;
+			children = (
+				123E6A1B275E8D4E00C713E2 /* Unit.xctestplan */,
+				123E6A1C275E8D9500C713E2 /* Ui.xctestplan */,
+				123E6A1D275E8E1C00C713E2 /* Full.xctestplan */,
+			);
+			path = TestPlanes;
+			sourceTree = "<group>";
+		};
 		12888CCF27556437004A9FF5 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +168,7 @@
 		12888CDA27556438004A9FF5 /* GBShop */ = {
 			isa = PBXGroup;
 			children = (
+				123E6A1A275E8D0000C713E2 /* TestPlanes */,
 				12888D0B275564C0004A9FF5 /* App */,
 				12888D1027556567004A9FF5 /* Core */,
 				12888D1127556575004A9FF5 /* Resources */,
