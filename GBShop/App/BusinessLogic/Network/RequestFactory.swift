@@ -19,6 +19,7 @@ class RequestFactory {
         configuration.httpShouldSetCookies = false
         configuration.headers = .default
         let manager = Session(configuration: configuration)
+        
         return manager
     }()
     
@@ -26,12 +27,14 @@ class RequestFactory {
     
     func makeAuthRequestFactory() -> AuthRequestFactory {
         let errorParser = makeErrorParser()
-        return Auth(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+        
+        return Auth(baseURL: UrlResources.baseURL, errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
-
-    func makeRegistrationRequestFactory() -> RegistrationRequestFactory {
+    
+    func makeProductRequestFactory() -> ProductRequestFactory {
         let errorParser = makeErrorParser()
-        return Registration(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+        
+        return Product(baseURL: UrlResources.baseURL, errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
 }
 
