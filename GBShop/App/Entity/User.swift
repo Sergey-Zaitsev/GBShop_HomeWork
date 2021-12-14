@@ -30,6 +30,4 @@ struct UserData {
     var creditCard: String
     var bio: String
 }
-struct UpdateUserDataResult: Codable {
-    let result: Int
-}
+
