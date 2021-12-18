@@ -28,7 +28,6 @@ class Product: AbstractRequestFactory {
 }
 
 extension Product: ProductRequestFactory {
-    
     func catalog(completionHandler: @escaping (AFDataResponse<[CatalogResult]>) -> Void) {
         let requestModel = Catalog(baseUrl: self.baseUrl)
         self.request(request: requestModel, completionHandler: completionHandler)
@@ -45,6 +44,7 @@ extension Product {
         let baseUrl: URL
         let method: HTTPMethod = .get
         let path: String = "catalog"
+    
         var parameters: Parameters?
     }
     
@@ -52,7 +52,9 @@ extension Product {
         let baseUrl: URL
         let method: HTTPMethod = .get
         let path: String = "good"
+    
         let id: Int
+        
         var parameters: Parameters? {
             return [
                 "product_id": id

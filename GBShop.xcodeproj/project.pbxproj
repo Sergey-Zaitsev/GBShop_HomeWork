@@ -40,6 +40,12 @@
 		129ED4992768F6A1009D07BA /* ReviewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129ED4982768F6A1009D07BA /* ReviewResult.swift */; };
 		129ED49B2768F8F9009D07BA /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129ED49A2768F8F9009D07BA /* Review.swift */; };
 		129ED49D2768F926009D07BA /* ReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129ED49C2768F926009D07BA /* ReviewRequestFactory.swift */; };
+		12FFC552276DC1A500B53543 /* AddCartResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FFC551276DC1A500B53543 /* AddCartResult.swift */; };
+		12FFC554276DC1C100B53543 /* RemoveCartResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FFC553276DC1C100B53543 /* RemoveCartResult.swift */; };
+		12FFC556276DC1DE00B53543 /* GetCartResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FFC555276DC1DE00B53543 /* GetCartResult.swift */; };
+		12FFC558276DC1FA00B53543 /* PayCartResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FFC557276DC1FA00B53543 /* PayCartResult.swift */; };
+		12FFC55A276DC2F800B53543 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FFC559276DC2F800B53543 /* Cart.swift */; };
+		12FFC55C276DC31700B53543 /* CartRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FFC55B276DC31700B53543 /* CartRequestFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +105,12 @@
 		129ED4982768F6A1009D07BA /* ReviewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResult.swift; sourceTree = "<group>"; };
 		129ED49A2768F8F9009D07BA /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		129ED49C2768F926009D07BA /* ReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRequestFactory.swift; sourceTree = "<group>"; };
+		12FFC551276DC1A500B53543 /* AddCartResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCartResult.swift; sourceTree = "<group>"; };
+		12FFC553276DC1C100B53543 /* RemoveCartResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCartResult.swift; sourceTree = "<group>"; };
+		12FFC555276DC1DE00B53543 /* GetCartResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCartResult.swift; sourceTree = "<group>"; };
+		12FFC557276DC1FA00B53543 /* PayCartResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCartResult.swift; sourceTree = "<group>"; };
+		12FFC559276DC2F800B53543 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		12FFC55B276DC31700B53543 /* CartRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRequestFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +149,8 @@
 				123E69FC275E68AD00C713E2 /* RequestFactory.swift */,
 				129ED49A2768F8F9009D07BA /* Review.swift */,
 				129ED49C2768F926009D07BA /* ReviewRequestFactory.swift */,
+				12FFC559276DC2F800B53543 /* Cart.swift */,
+				12FFC55B276DC31700B53543 /* CartRequestFactory.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -246,6 +260,10 @@
 				129ED4942768F644009D07BA /* AddReviewResult.swift */,
 				129ED4962768F686009D07BA /* RemoveReviewResult.swift */,
 				129ED4982768F6A1009D07BA /* ReviewResult.swift */,
+				12FFC551276DC1A500B53543 /* AddCartResult.swift */,
+				12FFC553276DC1C100B53543 /* RemoveCartResult.swift */,
+				12FFC555276DC1DE00B53543 /* GetCartResult.swift */,
+				12FFC557276DC1FA00B53543 /* PayCartResult.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -430,6 +448,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				123E69FD275E68AD00C713E2 /* RequestFactory.swift in Sources */,
+				12FFC558276DC1FA00B53543 /* PayCartResult.swift in Sources */,
+				12FFC55A276DC2F800B53543 /* Cart.swift in Sources */,
 				123E69FB275E67A500C713E2 /* Auth.swift in Sources */,
 				129ED49D2768F926009D07BA /* ReviewRequestFactory.swift in Sources */,
 				129ED4992768F6A1009D07BA /* ReviewResult.swift in Sources */,
@@ -437,6 +457,7 @@
 				123E6A17275E6AA800C713E2 /* AbstractRequestFactory.swift in Sources */,
 				1250A5BA2766A0DC0036411A /* ProductResult.swift in Sources */,
 				123E6A02275E695700C713E2 /* Product.swift in Sources */,
+				12FFC556276DC1DE00B53543 /* GetCartResult.swift in Sources */,
 				123E6A11275E6A5400C713E2 /* AbstractErrorParser.swift in Sources */,
 				12888CE027556438004A9FF5 /* ViewController.swift in Sources */,
 				12888CDC27556438004A9FF5 /* AppDelegate.swift in Sources */,
@@ -452,8 +473,11 @@
 				129ED4952768F644009D07BA /* AddReviewResult.swift in Sources */,
 				1250A5B827668CB80036411A /* UrlResources.swift in Sources */,
 				129ED4912768F2E8009D07BA /* UpdateUserDataResult.swift in Sources */,
+				12FFC552276DC1A500B53543 /* AddCartResult.swift in Sources */,
+				12FFC554276DC1C100B53543 /* RemoveCartResult.swift in Sources */,
 				123E6A04275E698300C713E2 /* ProductRequestFactory.swift in Sources */,
 				123E6A08275E69CA00C713E2 /* User.swift in Sources */,
+				12FFC55C276DC31700B53543 /* CartRequestFactory.swift in Sources */,
 				12888CDE27556438004A9FF5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
