@@ -21,3 +21,15 @@ struct User: Codable {
     }
 }
 
+struct UserData {
+    var id: Int
+    var username: String
+    var password: String
+    var email: String
+    var gender: String
+    var creditCard: String
+    var bio: String
+}
+struct UpdateUserDataResult: Codable {
+    let result: Int
+}
