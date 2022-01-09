@@ -23,10 +23,16 @@ class ViewController: UIViewController {
         
         self.catalog()
         self.goodByID()
+        
+        self.addReview()
+        self.getReview()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.removeReview()
+        }
     }
     
     func login() {
-        let auth = requestFactory.makeAuthRequestFactory()
+        let auth = requestFactory.makeAuthRequestFatory()
         auth.login(userName: "Somebody", password: "mypassword") { response in
             switch response.result {
             case .success(let login):
@@ -38,7 +44,7 @@ class ViewController: UIViewController {
     }
     
     func logout() {
-        let auth = requestFactory.makeAuthRequestFactory()
+        let auth = requestFactory.makeAuthRequestFatory()
         auth.logout(userID: 123) { response in
             switch response.result {
             case .success(let logout):
@@ -50,14 +56,14 @@ class ViewController: UIViewController {
     }
     
     func signUp() {
-        let auth = requestFactory.makeAuthRequestFactory()
+        let auth = requestFactory.makeAuthRequestFatory()
         let user = UserData(
             id: 123,
             username: "Somebody",
             password: "OnceToldMe",
             email: "some@some.ru",
             gender: "m",
-            creditCard: "1111111-11111-11111-1111",
+            creditCard: "9872389-2424-234224-234",
             bio: "This is good! I think I will switch to another language"
         )
         auth.signUp(userData: user) { response in
@@ -71,14 +77,14 @@ class ViewController: UIViewController {
     }
     
     func updateUserData() {
-        let auth = requestFactory.makeAuthRequestFactory()
+        let auth = requestFactory.makeAuthRequestFatory()
         let user = UserData(
             id: 123,
             username: "Somebody",
             password: "OnceToldMe",
             email: "some@some.ru",
             gender: "m",
-            creditCard: "222222-22222-22222-2222",
+            creditCard: "9872389-2424-234224-234",
             bio: "This is good! I think I will switch to another language"
         )
         
@@ -93,7 +99,7 @@ class ViewController: UIViewController {
     }
     
     func catalog() {
-        let product = requestFactory.makeProductRequestFactory()
+        let product = requestFactory.makeProductRequestFatory()
         product.catalog { response in
             switch response.result {
             case .success(let catalog):
@@ -105,7 +111,7 @@ class ViewController: UIViewController {
     }
     
     func goodByID() {
-        let product = requestFactory.makeProductRequestFactory()
+        let product = requestFactory.makeProductRequestFatory()
         product.product(by: 123) { response in
             switch response.result {
             case .success(let good):
@@ -115,4 +121,47 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func addReview() {
+        let review = requestFactory.makeReviewRequestFatory()
+        review.add(userID: 123, productID: 456, text: "Review"){ response in
+            switch response.result {
+            case .success(let add):
+                print(add)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    var commentID: String?
+    
+    func getReview() {
+        let review = requestFactory.makeReviewRequestFatory()
+        review.get(productID: 456) { response in
+            switch response.result {
+            case .success(let reviews):
+                print(reviews)
+                self.commentID = reviews.first?.commentID
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func removeReview() {
+        guard let commentID = self.commentID else { return }
+        
+        let review = requestFactory.makeReviewRequestFatory()
+        
+        review.remove(commentID: commentID) { response in
+            switch response.result {
+            case .success(let remove):
+                print(remove)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
+
