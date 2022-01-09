@@ -16,17 +16,20 @@ protocol AbstractRequestFactory {
     @discardableResult
     func request<T: Decodable>(
         request: URLRequestConvertible,
-        completionHandler: @escaping (AFDataResponse<T>) -> Void)
+        completionHandler: @escaping (AFDataResponse<T>) -> Void
+    )
     -> DataRequest
 }
 
 extension AbstractRequestFactory {
+    
     @discardableResult
     public func request<T: Decodable>(
         request: URLRequestConvertible,
-        completionHandler: @escaping (AFDataResponse<T>) -> Void)
+        completionHandler: @escaping (AFDataResponse<T>) -> Void
+    )
     -> DataRequest {
-        return sessionManager
+        sessionManager
             .request(request)
             .responseCodable(errorParser: errorParser, queue: queue, completionHandler: completionHandler)
     }
