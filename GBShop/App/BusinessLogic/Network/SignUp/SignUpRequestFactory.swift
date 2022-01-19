@@ -20,4 +20,3 @@ protocol SignUpRequestFactory {
         completionHandler: @escaping (AFDataResponse<SignUpResult>) -> Void
     )
 }
-

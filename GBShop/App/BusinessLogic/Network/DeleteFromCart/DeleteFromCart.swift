@@ -1,5 +1,5 @@
 //
-//  ProductReviews.swift
+//  DeleteFromCart.swift
 //  GBShop
 //
 //  Created by Сергей Зайцев on 07.01.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class ProductReviews: AbstractRequestFactory {
+class DeleteFromCart: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
@@ -27,18 +27,21 @@ class ProductReviews: AbstractRequestFactory {
     }
 }
 
-extension ProductReviews: ProductReviewsRequestFactory {
-    func getReviews(productId: Int, completionHandler: @escaping (AFDataResponse<ProductReviewsResult>) -> Void) {
-        let requestModel = ProductReviews(baseUrl: baseUrl, productId: productId)
+extension DeleteFromCart: DeleteFromCartRequestFactory {
+    func deleteFromCart(
+        productId: Int,
+        completionHandler: @escaping (AFDataResponse<DeleteFromCartResult>) -> Void
+    ) {
+        let requestModel = DeleteFromCart(baseUrl: baseUrl, productId: productId)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
 }
 
-extension ProductReviews {
-    struct ProductReviews: RequestRouter {
+extension DeleteFromCart {
+    struct DeleteFromCart: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "get_product_reviews"
+        let path: String = "delete_from_basket"
         
         let productId: Int
         var parameters: Parameters? {

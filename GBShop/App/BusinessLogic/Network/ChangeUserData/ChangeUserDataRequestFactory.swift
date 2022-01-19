@@ -20,4 +20,3 @@ protocol ChangeUserDataRequestFactory {
         completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void
     )
 }
-

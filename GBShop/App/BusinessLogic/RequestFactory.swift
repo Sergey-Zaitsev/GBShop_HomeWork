@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class RequestFactory {
-    
+       
     func makeErrorParser() -> AbstractErrorParser {
         ErrorParser()
     }
@@ -74,18 +74,23 @@ class RequestFactory {
         return DeleteProductReview(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue, baseUrl: UrlResources.baseURL)
     }
     
-    func makeAddToBasketRequestFactory() -> AddToBasketRequestFactory {
+    func makeAddToCartRequestFactory() -> AddToCartRequestFactory {
         let errorParser = makeErrorParser()
-        return AddToBasket(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue, baseUrl: UrlResources.baseURL)
+        return AddToCart(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue, baseUrl: UrlResources.baseURL)
     }
 
-    func makeDeleteFromBasketRequestFactory() -> DeleteFromBasketRequestFactory {
+    func makeDeleteFromCartRequestFactory() -> DeleteFromCartRequestFactory {
         let errorParser = makeErrorParser()
-        return DeleteFromBasket(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue, baseUrl: UrlResources.baseURL)
+        return DeleteFromCart(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue, baseUrl: UrlResources.baseURL)
     }
     
-    func makePayBasketRequestFactory() -> PayBasketRequestFactory {
+    func makePayCartRequestFactory() -> PayCartRequestFactory {
         let errorParser = makeErrorParser()
-        return PayBasket(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue, baseUrl: UrlResources.baseURL)
+        return PayCart(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue, baseUrl: UrlResources.baseURL)
+    }
+    
+    func makeGetCartRequestFactory() -> GetCartRequestFactory {
+        let errorParser = makeErrorParser()
+        return GetCart(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue, baseUrl: UrlResources.baseURL)
     }
 }

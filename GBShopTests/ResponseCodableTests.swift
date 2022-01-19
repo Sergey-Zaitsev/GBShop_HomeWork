@@ -50,4 +50,3 @@ struct ErrorParserStub: AbstractErrorParser {
         error
     }
 }
-

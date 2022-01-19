@@ -1,5 +1,5 @@
 //
-//  AddToBasketResult.swift
+//  AddToCartResult.swift
 //  GBShop
 //
 //  Created by Сергей Зайцев on 09.01.2022.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct AddToBasketResult: Codable {
+struct AddToCartResult: Codable {
     let result: Int
 }

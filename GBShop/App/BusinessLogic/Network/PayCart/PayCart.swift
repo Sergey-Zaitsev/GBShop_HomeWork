@@ -1,5 +1,5 @@
 //
-//  AddToBasket.swift
+//  PayCart.swift
 //  GBShop
 //
 //  Created by Сергей Зайцев on 07.01.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class AddToBasket: AbstractRequestFactory {
+class PayCart: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
@@ -27,31 +27,31 @@ class AddToBasket: AbstractRequestFactory {
     }
 }
 
-extension AddToBasket: AddToBasketRequestFactory {
-    func addToBasket(
-        productId: Int,
-        quantity: Int,
-        completionHandler: @escaping (AFDataResponse<AddToBasketResult>) -> Void
+extension PayCart: PayCartRequestFactory {
+    func payCart(
+        userId: Int,
+        completionHandler: @escaping (AFDataResponse<PayCartResult>) -> Void
     ) {
-        let requestModel = AddToBasket(baseUrl: baseUrl, productId: productId, quantity: 1)
+        let requestModel = PayCart(baseUrl: baseUrl, userId: userId)
         self.request(request: requestModel, completionHandler: completionHandler)
+        
+        clearBasket()
     }
+    
+    private func clearBasket() {}
 }
 
-extension AddToBasket {
-    struct AddToBasket: RequestRouter {
+extension PayCart {
+    struct PayCart: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "add_to_basket"
+        let path: String = "pay_basket"
         
-        let productId: Int
-        let quantity: Int
+        let userId: Int
         var parameters: Parameters? {
             [
-                "id_product": productId,
-                "quantity": quantity
+                "id_user": userId
             ]
         }
     }
 }
-

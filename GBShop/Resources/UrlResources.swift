@@ -8,5 +8,5 @@
 import Foundation
 
 enum UrlResources {
-    static let baseURL: URL = URL(string: "https://morning-sands-27748.herokuapp.com/")!
+    static let baseURL: URL = URL(string: "https://protected-shelf-18561.herokuapp.com/")!
 }

@@ -1,5 +1,5 @@
 //
-//  PayBasketResult.swift
+//  DeleteFromCartResult.swift
 //  GBShop
 //
 //  Created by Сергей Зайцев on 09.01.2022.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct PayBasketResult: Codable {
+struct DeleteFromCartResult: Codable {
     let result: Int
 }
