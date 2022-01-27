@@ -14,4 +14,3 @@ protocol DeleteProductReviewRequestFactory {
         completionHandler: @escaping (AFDataResponse<DeleteProductReviewResult>) -> Void
     )
 }
-

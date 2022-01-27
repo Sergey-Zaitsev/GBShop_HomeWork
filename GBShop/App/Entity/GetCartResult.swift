@@ -12,4 +12,3 @@ struct GetCartResult: Codable {
     let countGoods: Int
     let contents: [CartProduct]
 }
-

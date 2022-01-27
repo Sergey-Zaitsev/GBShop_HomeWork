@@ -29,4 +29,3 @@ class LogOutTests: XCTestCase {
         waitForExpectations(timeout: 10)
     }
 }
-

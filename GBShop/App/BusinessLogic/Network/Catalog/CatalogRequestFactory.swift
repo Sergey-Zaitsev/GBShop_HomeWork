@@ -16,4 +16,3 @@ protocol CatalogRequestFactory {
         ) -> Void
     )
 }
-

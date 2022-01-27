@@ -61,9 +61,7 @@ final class ProductTableView: UIView {
     }()
     
     private let edgeSpace: CGFloat = 10
-
-    // MARK: - Initialization
-    
+  
     convenience init() {
         self.init(frame: .zero)
     }
@@ -77,8 +75,6 @@ final class ProductTableView: UIView {
     required init(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - Configuration
     
     private func configure() {
         setupViews()
@@ -157,4 +153,3 @@ final class ProductTableView: UIView {
         ])
     }
 }
-

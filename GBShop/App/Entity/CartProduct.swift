@@ -20,4 +20,3 @@ struct CartProduct: Codable {
         case quantity
     }
 }
-

@@ -53,8 +53,6 @@ final class CartTableView: UIView {
     
     private let edgeSpace: CGFloat = 10
 
-    // MARK: - Initialization
-    
     convenience init() {
         self.init(frame: .zero)
     }

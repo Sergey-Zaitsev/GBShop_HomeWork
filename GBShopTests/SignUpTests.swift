@@ -35,4 +35,3 @@ class SignUpTests: XCTestCase {
         waitForExpectations(timeout: 10)
     }
 }
-

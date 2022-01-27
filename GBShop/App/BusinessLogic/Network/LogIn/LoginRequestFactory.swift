@@ -15,4 +15,3 @@ protocol LogInRequestFactory {
         completionHandler: @escaping (AFDataResponse<LoginResult>) -> Void
     )
 }
-

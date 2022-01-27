@@ -14,6 +14,9 @@ final class LoginViewController: UIViewController {
     }()
     
     private let requestFactory: RequestFactory
+    private let analytics = AppAnalytics()
+    
+    // MARK: - Initialization
     
     init(requestFactory: RequestFactory) {
         self.requestFactory = requestFactory
@@ -46,8 +49,10 @@ final class LoginViewController: UIViewController {
                 DispatchQueue.main.async {
                     switch response.result {
                     case .success(let login):
+                        self.analytics.successfulLogIn()
                         self.presentCatalogViewController(user: login.user)
                     case .failure(let error):
+                        self.analytics.unsuccessfulLogIn()
                         let alert = UIAlertController(title: "Error", message: error.errorDescription, preferredStyle: UIAlertController.Style.alert)
                         alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default) { _ in
                             self.login()
