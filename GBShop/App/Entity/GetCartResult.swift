@@ -2,33 +2,14 @@
 //  GetCartResult.swift
 //  GBShop
 //
-//  Created by Сергей Зайцев on 18.12.2021.
+//  Created by Сергей Зайцев on 19.01.2022.
 //
 
 import Foundation
 
 struct GetCartResult: Codable {
-    let totalPrice: Int
-    let count: Int
-    let products: [CartProduct]
-    
-    enum CodingKeys: String, CodingKey {
-        case totalPrice = "total_price"
-        case count
-        case products
-    }
+    let amount: Int
+    let countGoods: Int
+    let contents: [CartProduct]
 }
 
-struct CartProduct: Codable {
-    let productID: Int
-    let quantity: Int
-    let price: Int
-    let productName: String
-    
-    enum CodingKeys: String, CodingKey {
-        case productID = "product_id"
-        case quantity
-        case price
-        case productName = "product_name"
-    }
-}
