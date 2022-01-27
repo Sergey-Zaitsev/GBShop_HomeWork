@@ -6,14 +6,13 @@
 //
 
 import Foundation
+
 struct CatalogResult: Codable {
-    let id: Int
-    let name: String
-    let price: Int
+    let pageNumber: Int
+    let products: [CatalogProduct]
     
     enum CodingKeys: String, CodingKey {
-        case id = "product_id"
-        case name = "product_name"
-        case price
+        case pageNumber = "page_number"
+        case products
     }
 }
