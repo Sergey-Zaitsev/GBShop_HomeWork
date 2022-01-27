@@ -40,8 +40,5 @@ extension RequestRouter {
         case .json:
             return try JSONEncoding.default.encode(urlRequest, with: parameters)
         }
-        
     }
 }
-
-
